@@ -1,0 +1,2 @@
+# m h  dom mon dow   command
+45 3 * * 6 /bin/bash /srv/all_start.sh
