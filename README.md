@@ -23,6 +23,7 @@
 4. Копируем на локальную машину файлы из репозитория:
 
     `git clone https://github.com/volt-80386/Project-1 /srv`
+    
     `chmod +x all_start.sh`
 
 ## Эксплуатация
