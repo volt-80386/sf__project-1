@@ -3,10 +3,15 @@
 ## Установка (Ubuntu 16.04 или выше)
 
 1. Устанавливаем на локальной машине необходимые пакеты:
-
-    `sudo -s`
+    <pre>
+    sudo -s
+    apt update && apt install docker.io make dpkg-repack
+    </pre>
     
-    `apt update && apt install docker.io make`
+2. Запускаем Docker:
+   <pre>
+   systemctl enable docker && systemctl start docker
+   </pre>
 
 2. Генерируем и копируем ключи на удаленный хост:
    <pre>
@@ -14,17 +19,25 @@
    ssh-copy-id root@<i>remote-ip-addr</i>
    </pre>
 
-3. Устанавливаем на удаленном хосте Docker:
+3. Устанавливаем и запускаем Docker на удаленном хосте:
 
+   *Так как в задании на удалаенной машине нет интернета, то собираем на локальной машине, а, затем, копируем на удаленную необходимые deb-пакеты:*
+   
    <pre>
-   ssh root@<i>remote-ip-addr</i> "apt update && apt install docker.io"
+   cd ~
+   dpkg-repack docker.io containerd iptables runc libip4tc0 libip6tc0 libiptc0 libxtables12 libnetfilter-conntrack3 libnfnetlink0:amd64
+   ssh root@<i>remote-ip-addr</i> "mkdir /srv"
+   scp ~/*.deb root@<i>remote-ip-addr</i>/srv
+   ssh root@<i>remote-ip-addr</i> "dpkg --install /srv/lib*.deb && dpkg --install /srv/runc*.deb && dpkg --install /srv/containerd* && dpkg --install /srv/iptables && dpkg --install /srv/docker.io*.deb && rm /srv/*.deb"
+   ssh root@<i>remote-ip-addr</i> "systemctl unmask docker && systemctl enable docker && systemctl start docker"
    </pre>
     
 4. Копируем на локальную машину файлы из репозитория:
 
-    `git clone https://github.com/volt-80386/Project-1 /srv`
-    
-    `chmod +x /srv/all_start.sh`
+    <pre>
+    git clone https://github.com/volt-80386/Project-1 /srv
+    chmod +x /srv/all_start.sh
+    </pre>
 
 ## Эксплуатация
     
