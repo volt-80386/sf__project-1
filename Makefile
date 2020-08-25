@@ -1,6 +1,6 @@
 sync:
 	cd /srv
-	wget -r -l 1 -nd -A 'bugs*.html' https://www.chiark.greenend.org.uk/~sgtatham/bugs.html
+	wget -r -e robots=off -l 1 -nd -A 'bugs*.html' https://www.chiark.greenend.org.uk/~sgtatham/bugs.html
 build:
 	cd /srv
 	-docker image rm project1
