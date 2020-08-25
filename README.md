@@ -30,6 +30,7 @@
    scp ~/*.deb root@<i>remote-ip-addr</i>/srv
    ssh root@<i>remote-ip-addr</i> "dpkg --install /srv/lib*.deb && dpkg --install /srv/runc*.deb && dpkg --install /srv/containerd* && dpkg --install /srv/iptables && dpkg --install /srv/docker.io*.deb && rm /srv/*.deb"
    ssh root@<i>remote-ip-addr</i> "systemctl unmask docker && systemctl enable docker && systemctl start docker"
+   rm ~/*.deb
    </pre>
     
 4. Копируем на локальную машину файлы из репозитория:
