@@ -24,7 +24,7 @@
 
     `git clone https://github.com/volt-80386/Project-1 /srv`
     
-    `chmod +x all_start.sh`
+    `chmod +x /srv/all_start.sh`
 
 ## Эксплуатация
     
