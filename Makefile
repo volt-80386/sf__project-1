@@ -7,9 +7,8 @@ build:
 	docker build -t project1 .
 	docker save -o project1.tar project1
 deploy:
-	cd /srv
-	scp project1.tar root@10.0.3.115:/srv
-	-ssh root@10.0.3.115 "docker kill project1-container"
-	-ssh root@10.0.3.115 "docker container rm project1-container"
-	-ssh root@10.0.3.115 "docker image rm project1"
-	-ssh root@10.0.3.115 "cd /srv && docker load -i project1.tar && docker run -d -p 80:8080 --name project1-container project1"
+	scp /srv/project1.tar root@$$ip:/srv
+	-ssh root@$$ip "docker kill project1-container"
+	-ssh root@$$ip "docker container rm project1-container"
+	-ssh root@$$ip "docker image rm project1"
+	-ssh root@$$ip "cd /srv && docker load -i project1.tar && docker run -d -p 80:8080 --name project1-container project1"
