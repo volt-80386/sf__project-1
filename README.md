@@ -34,7 +34,6 @@
    </pre>
     
 4. Копируем на локальную машину файлы из репозитория:
-
     <pre>
     git clone https://github.com/volt-80386/Project-1 /srv
     chmod +x /srv/all_start.sh
@@ -53,8 +52,9 @@
     `make build`
 
 3. Деплоим контейнер на удаленную машину
-
-    `make deploy`
+    <pre>
+    make deploy ip=<i>remote-ip-addr</i>
+    </pre>
 
 ### Автоматизируем пункты 1-3:
 
