@@ -44,12 +44,14 @@
     cd /srv
    
 1. Скачиваем html-файлы с внешнего web-сервера:
-
-    `make sync`
+    <pre>
+    make sync
+    </pre>
 
 2. Создаем Docker-контейнер c html-файлами и локальным web-сервером:
-
-    `make build`
+    <pre>
+    make build
+    </pre>
 
 3. Деплоим контейнер на удаленную машину
     <pre>
