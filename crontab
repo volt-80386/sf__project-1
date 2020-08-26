@@ -1,2 +1,2 @@
 # m h  dom mon dow   command
-45 3 * * 6 /bin/bash /srv/all_start.sh 10.0.3.115
+45 3 * * 6 /bin/bash /srv/all_start.sh 10.0.3.115 # replace with your ip address
