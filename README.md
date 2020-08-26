@@ -58,6 +58,5 @@
 
 ### Автоматизируем пункты 1-3:
 
-    cd /srv
-    crontab crontab
+    crontab /srv/crontab
 Запуск по субботам, в 3:45, посредством bash-скрипта (*all_start.sh remote-ip-addr*) и протоколированием работы в лог
