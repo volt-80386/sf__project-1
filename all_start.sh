@@ -9,5 +9,5 @@ make sync >> $LOG
 echo "---- build start ----" >> $LOG
 make build >> $LOG
 echo "---- deploy start ----" >> $LOG
-make deploy >> $LOG
+make deploy ip=$1 >> $LOG
 echo "--------------- END ---------------" >> $LOG
