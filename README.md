@@ -1,6 +1,11 @@
 # Project-1
 
-## Установка (Ubuntu 16.04 или выше)
+# Задание: 
+https://github.com/SkillfactoryCodingTeam/devops__project__automation
+
+# Решение:
+
+## Установка
 
 1. Устанавливаем на локальной машине необходимые пакеты:
     <pre>
